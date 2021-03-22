@@ -3,16 +3,16 @@
 {% block title %}Liste des utilisateurs{% endblock %}
 
 {% block body %}
-    <h1>Liste des utilisateurs</h1>
+    <h1>{{'Liste des utilisateurs' |trans}}</h1>
     <table>
         <thead>
-            <th>ID</th>
-            <th>Email</th>
-            <th>Rôles</th>
-            <th>nom</th>
-            <th>prenom</th>
-            <th>date de Naissance</th>
-            <th>telephone</th>
+            <th>{{'ID'|trans}}</th>
+            <th>{{'Email'|trans}}</th>
+            <th>{{'Rôles'|trans}}</th>
+            <th>{{'nom'|trans}}</th>
+            <th>{{'prenom'|trans}}</th>
+            <th>{{'date de Naissance'|trans}}</th>
+            <th>{{'telephone'|trans}}</th>
         </thead>
         <tbody>
             {# On boucle sur les utilisateurs #}
@@ -24,9 +24,9 @@
                         {# On boucle sur les rôles #}
                         {% for role in user.roles %}
                             {% if role == "ROLE_USER" %}
-                                Utilisateur
+                                {{'Utilisateur'|trans}}
                             {% elseif role == "ROLE_ADMIN" %}
-                                Administrateur
+                                {{'Administrateur'|trans}}
                             {% endif %}
                         {% endfor %}&nbsp
                     </td>

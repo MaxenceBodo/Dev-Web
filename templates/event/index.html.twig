@@ -8,9 +8,9 @@
         <table>
             <thead>
             <tr>
-                <th>Nom</th>
-                <th>Description</th>
-                <th>Type Activite</th>
+                <th>{{'Nom'|trans}}</th>
+                <th>{{'Description'|trans}}</th>
+                <th>{{'Type Activite'|trans}}</th>
             </tr>
             </thead>
             <tbody>
@@ -24,9 +24,9 @@
             </tbody>
             </ul>
         </table>
-        <h2>Commentaires</h2>
+        <h2>{{'Commentaires'|trans}}</h2>
         {% for commentaire in comment %}
-            <p>Commentaire écrit par {{ commentaire.pseudo }} le {{ commentaire.createdAt|date }}</p>
+            <p>{{'Commentaire écrit par'|trans}} {{ commentaire.pseudo }} le {{ commentaire.createdAt|date }}</p>
             <p>{{ commentaire.contenu }}</p>
         {% endfor %}
         <div class="pagination">

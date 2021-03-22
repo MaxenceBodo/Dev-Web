@@ -11,6 +11,9 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Event;
 use Symfony\Component\Security\Core\User\UserInterface;
 
+/**
+ * @Route("/{_locale}/")
+ */
 class UserController extends AbstractController
 {
     /**

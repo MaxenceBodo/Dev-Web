@@ -13,7 +13,9 @@ use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraint;
 
-
+/**
+ * @Route("/{_locale}/")
+ */
 class EventController extends AbstractController
 {
     //---------READ

@@ -11,6 +11,7 @@
 
         {% block javascripts %}
             {#{{ encore_entry_script_tags('app') }}#}
+            #body{background-color: rgba(128,128,128,0.6);}
         {% endblock %}
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
@@ -32,15 +33,19 @@
                     <li>
                         <div>
                             {% if is_granted('ROLE_ADMIN') %}
-                                <a href="/admin" class="btn btn-default navbar-btn">{{ 'Mode administration' |trans }}</a>
+                                <a href="/{_locale}/admin" class="btn btn-default navbar-btn">{{ 'Mode administration' |trans }}</a>
                             {% endif %}
                             {% if is_granted('ROLE_USER') %}
                                 <a href="{{ path('gererCompte', {'id': app.user.id}) }}" class="btn btn-default navbar-btn">{{ 'Profil' |trans }}</a>
                                 <a href="/logout" class="btn btn-default navbar-btn">{{ 'Se déconnecter' |trans }}</a>
                             {% else %}
-                                <a href="/register" class="btn btn-default navbar-btn">{{ 'S\'inscrire' |trans }}</a>
-                                <a href="/login" class="btn btn-default navbar-btn">{{ 'S\'identifier' |trans }}</a>
+                                <a href="/{_locale}/register" class="btn btn-default navbar-btn">{{ 'S\'inscrire' |trans }}</a>
+                                <a href="/{_locale}/login" class="btn btn-default navbar-btn">{{ 'S\'identifier' |trans }}</a>
                             {% endif %}
+                            {% for key,locale in locales %}
+                                <li><a href="{{ path(app.request.get('_route'),
+                                app.request.attributes.get('_route_params')|merge({'_locale': key})) }}">{{locale}}</a></li>
+                            {% endfor %}
 
                             
                         </div>

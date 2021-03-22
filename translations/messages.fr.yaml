@@ -17,3 +17,27 @@ Envoyer: Envoyer
 Mail: Mail
 'Mot de passe': 'Mot de passe'
 'Se rappeler de moi': 'Se rappeler de moi'
+'Modifier un utilisateur': 'Modifier un utilisateur'
+ID: ID
+Email: Email
+Rôles: Rôles
+nom: nom
+prenom: prenom
+'date de Naissance': 'date de Naissance'
+telephone: telephone
+Utilisateur: Utilisateur
+Administrateur: Administrateur
+'Gerer ses activites': 'Gerer ses activites'
+'Mode administration': 'Mode administration'
+Profil: Profil
+'Mes informations': 'Mes informations'
+Nom: Nom
+Description: Description
+'Type Activite': 'Type Activite'
+Commentaires: Commentaires
+'Commentaire écrit par': 'Commentaire écrit par'
+'FAIRE LES CRUD GIGA BG T ES TROP BEAU OUBLIE PAS': 'FAIRE LES CRUD GIGA BG T ES TROP BEAU OUBLIE PAS'
+'Mes Activites': 'Mes Activites'
+Editer: Editer
+Effacer: Effacer
+'Liste des utilisateurs': '__Liste des utilisateurs'

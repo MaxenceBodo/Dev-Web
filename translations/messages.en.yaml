@@ -2,7 +2,7 @@ Activigo: Activigo
 'DEPOSER UNE OFFRE': 'SUBMIT AN OFFER'
 Activite: Activite
 'S identifier': 'Sign in'
-'S inscrire': 'Register'
+'S inscrire': Register
 'Rajout activite': 'Add activity'
 Envoyer: Envoyer
 'Liste articles': 'Item list'
@@ -15,5 +15,31 @@ Envoyer: Envoyer
 'Se déconnecter': 'Sign out'
 'Identifiez vous': 'Sign in'
 Mail: Mail
-'Mot de passe': 'Password'
+'Mot de passe': Password
 'Se rappeler de moi': 'Remember me'
+'Modifier un utilisateur': 'Modifier un utilisateur'
+ID: ID
+Email: Mail
+Rôles: roles
+nom: 'last name'
+prenom: 'first name'
+'date de Naissance': 'Date of Birth'
+telephone: 'Phone Number'
+Utilisateur: User
+Administrateur: Admin
+'Gerer ses activites': 'Manage your activities'
+'Mode administration': 'administration mode'
+Profil: Profile
+'S''inscrire': 'Register '
+'S''identifier': Login
+'Mes informations': 'My information'
+Nom: 'Last name'
+Description: Description
+'Type Activite': 'Activity type'
+Commentaires: comment
+'Commentaire écrit par': 'Commentary written by'
+'FAIRE LES CRUD GIGA BG T ES TROP BEAU OUBLIE PAS': 'FAIRE LES CRUD GIGA BG T ES TROP BEAU OUBLIE PAS'
+'Mes Activites': 'My activities '
+Editer: Edit
+Effacer: Delete
+'Liste des utilisateurs': 'Users List'
