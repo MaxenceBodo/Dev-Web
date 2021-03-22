@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste article{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1> {{'Liste articles' |trans}}</h1>
+        <table>
+            <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for event in events %}
+                    <tr>
+                        <td>{{event.nom}}</td>
+                        <td>{{event.description}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            </ul>
+        </table>
+        <h2>Commentaires</h2>
+        {% for commentaire in comment %}
+            <p>Commentaire écrit par {{ commentaire.pseudo }} le {{ commentaire.createdAt|date }}</p>
+            <p>{{ commentaire.contenu }}</p>
+        {% endfor %}
+        <div class="pagination">
+            {#{{ knp_pagination_render(pagination) }}#}
+        </div>
+    </div>
+{% endblock %}
+
+

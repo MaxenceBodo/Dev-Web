@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil{% endblock %}
+
+{% block body %}
+    <h1> {{'Mes articles' |trans}}</h1>
+    <table>
+        <ul>
+            {% for event in mesEvent %}
+                <li>
+                    <div>{{event.nom}}</div>
+                    <div>{{event.description}}</div>
+                    <div>{{event.createur.getEmail()}}</div>
+                     <a href="{{ path('editerEvent', {'id': event.id }) }}" class="btn btn-default navbar-btn">{{ 'Editer' |trans }}</a>
+                    <a href="{{ path('deleteEvent', {'id': event.id }) }}" class="btn btn-default navbar-btn">{{ 'Effacer' |trans }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </table>
+{% endblock %}

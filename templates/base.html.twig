@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>{% block title %}ActiviGo{% endblock %}</title>
+        {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+        {% block stylesheets %}
+            {#{{ encore_entry_link_tags('app') }}#}
+        {% endblock %}
+
+        {% block javascripts %}
+            {#{{ encore_entry_script_tags('app') }}#}
+        {% endblock %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+
+    <body>
+        <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">{{ 'Activigo' |trans }}</a>
+                <a class="navbar-brand" href="/creerEvent">{{ 'DEPOSER UNE OFFRE' |trans }}</a>
+                <a class="navbar-brand" href="/event">{{ 'Activite' |trans }}</a>
+                {% if is_granted('ROLE_USER') %}
+                    <a href="{{ path('gererSesActivites', {'id': app.user.id}) }}" class="navbar-brand">{{ 'Gerer ses activites' |trans }}</a>
+                {% endif %}
+            </div>
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <div>
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <a href="/admin" class="btn btn-default navbar-btn">{{ 'Mode administration' |trans }}</a>
+                            {% endif %}
+                            {% if is_granted('ROLE_USER') %}
+                                <a href="{{ path('gererCompte', {'id': app.user.id}) }}" class="btn btn-default navbar-btn">{{ 'Profil' |trans }}</a>
+                                <a href="/logout" class="btn btn-default navbar-btn">{{ 'Se déconnecter' |trans }}</a>
+                            {% else %}
+                                <a href="/register" class="btn btn-default navbar-btn">{{ 'S\'inscrire' |trans }}</a>
+                                <a href="/login" class="btn btn-default navbar-btn">{{ 'S\'identifier' |trans }}</a>
+                            {% endif %}
+
+                            
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    {% block body %}{% endblock %}
+</div>
+
+</html>
