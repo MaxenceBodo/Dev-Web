@@ -26,7 +26,7 @@ class UserController extends AbstractController
     /**
      * @Route("/gererCompte/{id}", name="gererCompte")
      */
-    public function gererCompte(User $user, Request $request)
+    public function gererCompte(int $id,User $user, Request $request)
     {
         $form = $this->createForm(EditUserType::class, $user);
         $form->handleRequest($request);
@@ -37,7 +37,7 @@ class UserController extends AbstractController
             $entityManager->flush();
 
             $this->addFlash('message', 'Utilisateur modifié avec succès');
-            return $this->redirectToRoute('');
+            return $this->redirectToRoute('home');
         }
         
         return $this->render('user/editerProfil.html.twig', [
