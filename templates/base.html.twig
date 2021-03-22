@@ -11,7 +11,6 @@
 
         {% block javascripts %}
             {#{{ encore_entry_script_tags('app') }}#}
-            #body{background-color: rgba(128,128,128,0.6);}
         {% endblock %}
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
@@ -21,8 +20,8 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="/">{{ 'Activigo' |trans }}</a>
-                <a class="navbar-brand" href="/creerEvent">{{ 'DEPOSER UNE OFFRE' |trans }}</a>
-                <a class="navbar-brand" href="/event">{{ 'Activite' |trans }}</a>
+                <a class="navbar-brand" href="/{_locale}/creerEvent">{{ 'DEPOSER UNE OFFRE' |trans }}</a>
+                <a class="navbar-brand" href="/{_locale}/event">{{ 'Activite' |trans }}</a>
                 {% if is_granted('ROLE_USER') %}
                     <a href="{{ path('gererSesActivites', {'id': app.user.id}) }}" class="navbar-brand">{{ 'Gerer ses activites' |trans }}</a>
                 {% endif %}
