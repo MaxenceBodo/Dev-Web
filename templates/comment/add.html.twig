@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter Commentaire{% endblock %}
+
+{% block body %}
+    <h1>{{'Rajout Commentaire' |trans}}</h1>
+    {{ form_start(registrationForm)}}
+       <label>{% trans %}Contenu{% endtrans %} : </label>{{ form_widget(registrationForm.contenu) }}
+        
+    {{ form_end(registrationForm) }}
+{% endblock %}

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Commentaire;
+use App\Entity\Event;
 use App\Form\CommentairesType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,24 +24,41 @@ class CommentController extends AbstractController
     }
 
     /**
-     * @Route("/creerComment",name="creerEvent")
+     * @Route("/creerComment/{id}",name="creerComment")
      */
-    public function addComment(Request $request, UserInterface $user)
+    public function addComment(int $id,Request $request, UserInterface $user)
     {
         $comment = new Commentaire();
         $form = $this->createForm(CommentairesType::class,$comment);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $comment->setEmail($user->getUsername());
+            $comment->setActif(true);
+            $comment->setCreatedAt(new \DateTime('now'));
+            $comment->setEvent($id);
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($comment);
             $entityManager->flush();
-            return $this->redirectToRoute('home');
+            return $this->redirectToRoute('event');
         }
 
-        return $this->render('comment/index.html.twig',[
+        return $this->render('comment/add.html.twig',[
             'registrationForm'=>$form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/afficherComment/{id}",name="afficherComment")
+     */
+    function showComment(int $id,Request $request)
+    {
+        $donnees = $this->getDoctrine()->getRepository(Commentaire::class)->findBY([
+            'event'=>$id
+        ],['created_at'=>'desc']);
+        return $this->render('comment/index.html.twig',[
+            'comments'=>$donnees
         ]);
     }
 }

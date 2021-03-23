@@ -20,11 +20,6 @@ class Commentaire
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $pseudo;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
     private $email;
 
     /**
@@ -43,25 +38,13 @@ class Commentaire
     private $created_at;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Event::class, inversedBy="commentaires")
+     * @ORM\Column(type="integer")
      */
     private $event;
 
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getPseudo(): ?string
-    {
-        return $this->pseudo;
-    }
-
-    public function setPseudo(string $pseudo): self
-    {
-        $this->pseudo = $pseudo;
-
-        return $this;
     }
 
     public function getEmail(): ?string
@@ -112,12 +95,12 @@ class Commentaire
         return $this;
     }
 
-    public function getEvent(): ?Event
+    public function getEvent(): ?int
     {
         return $this->event;
     }
 
-    public function setEvent(?Event $event): self
+    public function setEvent(?int $event): self
     {
         $this->event = $event;
 

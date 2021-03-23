@@ -33,7 +33,7 @@ class EventController extends AbstractController
         // Méthode findBy qui permet de récupérer les données avec des critères de filtre et de tri
         $donneesEvent = $this->getDoctrine()->getRepository(Event::class)->findBy([],['date' => 'desc']);
         $donneesComent= $this->getDoctrine()->getRepository(Commentaire::class)->findBy([
-            'pseudo'=>$donneesEvent,
+            'email'=>$donneesEvent,
             'actif'=>1
         ],['created_at'=>'desc']);
 

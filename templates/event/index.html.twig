@@ -34,6 +34,7 @@
                 <th scope="col">{{'Description'|trans}}</th>
                 <th scope="col">{{'Type Activite'|trans}}</th>
                 <th scope="col">{{''|trans}}</th>
+                <th scope="col">{{''|trans}}</th>
             </tr>
             </thead>
             <tbody>
@@ -43,20 +44,13 @@
                         <td>{{event.lieux}}</td>
                         <td>{{event.description}}</td>
                         <td>{{event.type}}</td>
-                        <td><a href="/creerComment" class="btn btn-default navbar-btn">{{ 'Ajouter Commentaire' |trans }}</a><td>
+                        <td><a href="{{ path('creerComment', {'id': event.id}) }}" class="navbar-brand">{{ 'Ajouter Commentaire' |trans }}</a><td>
+                        <td><a href="{{ path('afficherComment', {'id': event.id}) }}" class="navbar-brand">{{ 'Afficher Commentaire' |trans }}</a><td>
                     </tr>
                 {% endfor %}
                 {{knp_pagination_render(events)}}
             </tbody>
         </table>
-        <h2>{{'Commentaires'|trans}}</h2>
-        {% for commentaire in comments %}
-            <p>{{'Commentaire écrit par'|trans}} {{ commentaire.pseudo }} {{'le'|trans}} {{ commentaire.createdAt|date }}</p>
-            <p>{{ commentaire.contenu }}</p>
-        {% endfor %}
-        <div class="pagination">
-            {#{{ knp_pagination_render(pagination) }}#}
-        </div>
     </div>
 {% endblock %}
 
