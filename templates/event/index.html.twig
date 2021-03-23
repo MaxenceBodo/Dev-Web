@@ -17,7 +17,7 @@
                         {{form_row(form.type)}}
                     </div>
                     <div class="col">
-                        <button class="btn btn-primary">Rechercher</button>
+                        <button class="btn btn-primary">{{'Rechercher'|trans}}</button>
                     </div>
                     
                 </div>
@@ -33,6 +33,7 @@
                 <th scope="col">{{'Lieux'|trans}}</th>
                 <th scope="col">{{'Description'|trans}}</th>
                 <th scope="col">{{'Type Activite'|trans}}</th>
+                <th scope="col">{{'Date'|trans}}</th>
                 <th scope="col">{{''|trans}}</th>
                 <th scope="col">{{''|trans}}</th>
             </tr>
@@ -44,6 +45,7 @@
                         <td>{{event.lieux}}</td>
                         <td>{{event.description}}</td>
                         <td>{{event.type}}</td>
+                        <td>{{event.date|date("m/d/Y")}}<td>
                         <td><a href="{{ path('creerComment', {'id': event.id}) }}" class="navbar-brand">{{ 'Ajouter Commentaire' |trans }}</a><td>
                         <td><a href="{{ path('afficherComment', {'id': event.id}) }}" class="navbar-brand">{{ 'Afficher Commentaire' |trans }}</a><td>
                     </tr>
