@@ -27,16 +27,6 @@ class EditUserType extends AbstractType
                 'required' => true,
                 'attr' => ['class' =>'form-control'],
             ])
-            ->add('roles', ChoiceType::class, [
-                'choices' => [
-                    'Utilisateur' => 'ROLE_USER',
-                    'Administrateur' => 'ROLE_ADMIN'
-                ],
-                'expanded' => true,
-                'multiple' => true,
-                'label' => 'Rôles' 
-            ])
-            ->add('password')
             ->add('nom')
             ->add('prenom')
             ->add('dateNaissance')
