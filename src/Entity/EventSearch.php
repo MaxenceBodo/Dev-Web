@@ -36,7 +36,7 @@ class EventSearch{
         return $this->lieux;
     }
 
-    public function setDate(DateTime $lieux) : EventSearch
+    public function setDate($lieux) : EventSearch
     {
         $this->lieux=$lieux;
         return $this;
