@@ -6,12 +6,12 @@
 
     <h1>{{'Rajout activite' |trans}}</h1>
     {{ form_start(registrationForm)}}
-        {{ form_row(registrationForm.nom) }}
-        {{ form_row(registrationForm.type) }}
-        {{ form_row(registrationForm.lieux) }}
-        {{ form_row(registrationForm.date) }}
-        {{ form_row(registrationForm.description) }}
-        <button type="submit" class="btn">{{'Envoyer' |trans}}</button>
+        <label>{% trans %}Nom{% endtrans %} : </label>{{ form_widget(registrationForm.nom) }}
+        <label>{% trans %}Type{% endtrans %} : </label>{{ form_widget(registrationForm.type) }}
+        <label>{% trans %}Lieux{% endtrans %} : </label>{{ form_widget(registrationForm.lieux) }}
+        <label>{% trans %}Date{% endtrans %} : </label>{{ form_widget(registrationForm.date) }}
+        <label>{% trans %}Description{% endtrans %} : </label>{{ form_widget(registrationForm.description) }}
+
     {{ form_end(registrationForm) }}
 
 {% endblock %}

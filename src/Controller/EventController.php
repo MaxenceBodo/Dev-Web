@@ -65,7 +65,7 @@ class EventController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             
-            $event->getCreateur($user->getUsername());
+            $event->setCreateur($user);
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($event);
             $entityManager->flush();

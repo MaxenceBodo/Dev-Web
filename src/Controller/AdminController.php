@@ -49,4 +49,19 @@ class AdminController extends AbstractController
             'userForm' => $form->createView(),
         ]);
     }
+
+    //---------DELETE
+    /**
+     * Supprimer un user
+     * @Route("/deleteUser/{id}",name="delete_utilisateur")
+     */
+    public function deleteUser(int $id): Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $user = $entityManager->getRepository(User::class)->find($id);
+        $entityManager->remove($user);
+        $entityManager->flush();
+
+        return $this->redirectToRoute("event");
+    }
 }

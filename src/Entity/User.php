@@ -39,7 +39,7 @@ class User implements UserInterface
     private $password;
 
     /**
-     * @ORM\OneToMany(targetEntity=Event::class, mappedBy="createur")
+     * @ORM\OneToMany(targetEntity=Event::class, mappedBy="createur", cascade={"remove"})
      */
     private $events;
 

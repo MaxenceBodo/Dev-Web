@@ -13,6 +13,7 @@ use App\Entity\User;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 class EventType extends AbstractType
 {
@@ -32,19 +33,18 @@ class EventType extends AbstractType
                     'Activite aquatique'=>'Activite aquatique',
                 ],
             ])
-            ->add('lieux',TextType::class, ['required' => true])
+            ->add('lieux',TextType::class, [
+                'required' => true
+            ])
             ->add('date',DateType::class, [
                 'required' => true,
+                'years'=>range(2021,2025),
                 'data'=> new \DateTime()
             ])
             ->add('description',TextType::class, ['required' => true])
-            
-            ->add('createur',EntityType::class,[
-                'class'=>User::class,
-                'choice_label'=>'email',
-                'required' => true
-            ])
             ->add('valider', SubmitType::class)
+            
+            
         ;
     }
 

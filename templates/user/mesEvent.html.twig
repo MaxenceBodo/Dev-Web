@@ -4,17 +4,24 @@
 
 {% block body %}
     <h1> {{'Mes Activites' |trans}}</h1>
-    <table>
-        <ul>
+    <table  class="table">
+        <thead>
+        <tr>
+            <th scope="col">{{'Nom'|trans}}</th>
+            <th scope="col">{{'Type'|trans}}</th>
+            <th scope="col">{{'Description'|trans}}</th>
+        </tr>
+        </thead>
+        <tbody>
             {% for event in mesEvent %}
-                <li>
-                    <div>{{event.nom}}</div>
-                    <div>{{event.description}}</div>
-                    <div>{{event.createur.getEmail()}}</div>
-                     <a href="{{ path('editerEvent', {'id': event.id }) }}" class="btn btn-default navbar-btn">{{ 'Editer' |trans }}</a>
-                    <a href="{{ path('deleteEvent', {'id': event.id }) }}" class="btn btn-default navbar-btn">{{ 'Effacer' |trans }}</a>
-                </li>
+                <tr>
+                    <td>{{event.nom}}</td>
+                    <td>{{event.type}}</td>
+                    <td>{{event.description}}</td>
+                    <td><a href="{{ path('editerEvent', {'id': event.id }) }}" class="btn btn-default navbar-btn">{{ 'Editer' |trans }}</a></td>
+                    <td><a href="{{ path('deleteEvent', {'id': event.id }) }}" class="btn btn-default navbar-btn">{{ 'Effacer' |trans }}</a></td>
+                </tr>
             {% endfor %}
-        </ul>
+        </tbody>
     </table>
 {% endblock %}

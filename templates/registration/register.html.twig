@@ -8,22 +8,15 @@
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
 
-    <h1>Register</h1>
-
+    <h1>{{'Inscrire'|trans}}</h1>
     {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-                label: 'Password'
-            }) 
-        }}
-        
-        {{ form_row(registrationForm.nom) }}
-        {{ form_row(registrationForm.prenom) }}
-        {{ form_row(registrationForm.dateNaissance) }}
-        {{ form_row(registrationForm.telephone) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-        
-        {{ form_row(registrationForm.agreeTerms) }}
+        <label>{% trans %}Email{% endtrans %} : </label>{{ form_widget(registrationForm.email) }}
+        <label>{% trans %}Mot de passe{% endtrans %} : </label>{{ form_widget(registrationForm.plainPassword, {label: 'Password' }) }}
+        <label>{% trans %}Nom{% endtrans %} : </label>{{ form_widget(registrationForm.nom) }}
+        <label>{% trans %}Prenom{% endtrans %} : </label>{{ form_widget(registrationForm.prenom) }}
+        <label>{% trans %}Date naissance{% endtrans %} : </label>{{ form_widget(registrationForm.dateNaissance) }}
+        <label>{% trans %}Telephone{% endtrans %} : </label>{{ form_widget(registrationForm.telephone) }}
+        {{ form_widget(registrationForm.agreeTerms) }}
 
         <button type="submit" class="btn">{{'Register'|trans}}</button>
     {{ form_end(registrationForm) }}

@@ -147,7 +147,7 @@
       </trans-unit>
       <trans-unit id="ssEkU20" resname="Nom">
         <source>Nom</source>
-        <target>Last name</target>
+        <target>Activity Name</target>
       </trans-unit>
       <trans-unit id="Um4Ah8w" resname="Description">
         <source>Description</source>
@@ -191,7 +191,55 @@
       </trans-unit>
       <trans-unit id="YAbzYoG" resname="Event modifié avec succès">
         <source>Event modifié avec succès</source>
-        <target>__Event modifié avec succès</target>
+        <target>Event successfully modified</target>
+      </trans-unit>
+      <trans-unit id="QuN2BLY" resname="Modifier">
+        <source>Modifier</source>
+        <target>Edit</target>
+      </trans-unit>
+      <trans-unit id="Xl0CFs4" resname="Supprimer">
+        <source>Supprimer</source>
+        <target>Remove</target>
+      </trans-unit>
+      <trans-unit id="uq3fcPt" resname="Type">
+        <source>Type</source>
+        <target>Type</target>
+      </trans-unit>
+      <trans-unit id="RDNLYtN" resname="Lieux">
+        <source>Lieux</source>
+        <target>Places</target>
+      </trans-unit>
+      <trans-unit id="mcQKtAW" resname="Date">
+        <source>Date</source>
+        <target>Dated</target>
+      </trans-unit>
+      <trans-unit id="3RATGlD" resname="inscrire">
+        <source>Inscrire</source>
+        <target>To register</target>
+      </trans-unit>
+      <trans-unit id="t8_nMCO" resname="Prenom">
+        <source>Prenom</source>
+        <target>First Name</target>
+      </trans-unit>
+      <trans-unit id="Mo3QwDe" resname="Date naissance">
+        <source>Date naissance</source>
+        <target>BirthDay</target>
+      </trans-unit>
+      <trans-unit id="hOzWMou" resname="Telephone">
+        <source>Telephone</source>
+        <target>Phone</target>
+      </trans-unit>
+      <trans-unit id="u3I07BJ" resname="Register">
+        <source>Register</source>
+        <target>Register</target>
+      </trans-unit>
+      <trans-unit id="giREF.l" resname="email">
+        <source>email</source>
+        <target>mail</target>
+      </trans-unit>
+      <trans-unit id="XohImNo" resname="password">
+        <source>password</source>
+        <target>password</target>
       </trans-unit>
     </body>
   </file>
