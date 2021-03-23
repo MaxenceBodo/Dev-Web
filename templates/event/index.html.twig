@@ -34,7 +34,9 @@
                 <th scope="col">{{'Description'|trans}}</th>
                 <th scope="col">{{'Type Activite'|trans}}</th>
                 <th scope="col">{{'Date'|trans}}</th>
-                <th scope="col">{{''|trans}}</th>
+                {% if is_granted('ROLE_USER') %}
+                    <th scope="col">{{''|trans}}</th>
+                {% endif %}
                 <th scope="col">{{''|trans}}</th>
             </tr>
             </thead>
@@ -46,7 +48,9 @@
                         <td>{{event.description}}</td>
                         <td>{{event.type}}</td>
                         <td>{{event.date|date("m/d/Y")}}<td>
-                        <td><a href="{{ path('creerComment', {'id': event.id}) }}" class="navbar-brand">{{ 'Ajouter Commentaire' |trans }}</a><td>
+                        {% if is_granted('ROLE_USER') %}
+                            <td><a href="{{ path('creerComment', {'id': event.id}) }}" class="navbar-brand">{{ 'Ajouter Commentaire' |trans }}</a><td>
+                        {% endif %}
                         <td><a href="{{ path('afficherComment', {'id': event.id}) }}" class="navbar-brand">{{ 'Afficher Commentaire' |trans }}</a><td>
                     </tr>
                 {% endfor %}
