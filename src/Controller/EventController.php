@@ -8,14 +8,17 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Event;
+use App\Entity\EventSearch;
+use App\Form\EventSearchType;
 use App\Form\EventType;
+use Doctrine\DBAL\Query\QueryBuilder;
+use Doctrine\Migrations\Query\Query;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraint;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
-/**
- * @Route("/{_locale}/")
- */
+
 class EventController extends AbstractController
 {
     //---------READ
@@ -24,6 +27,9 @@ class EventController extends AbstractController
      */
     public function index(Request $request, PaginatorInterface $paginator) : Response // Nous ajoutons les paramètres requis
     {
+        $search = new EventSearch();
+        $form = $this->createForm(EventSearchType::class, $search);
+        $form->handleRequest($request);
         // Méthode findBy qui permet de récupérer les données avec des critères de filtre et de tri
         $donneesEvent = $this->getDoctrine()->getRepository(Event::class)->findBy([],['date' => 'desc']);
         $donneesComent= $this->getDoctrine()->getRepository(Commentaire::class)->findBy([
@@ -38,8 +44,10 @@ class EventController extends AbstractController
         );
         
         return $this->render('event/index.html.twig', [
-            'events' => $donneesEvent,
+            'events' => $event,
             'comment' => $donneesComent,
+            'form'=>$form->createView(),
+
         ]);
     }
 
@@ -75,7 +83,7 @@ class EventController extends AbstractController
      * Modifier un event
      * @Route("/modifEvent/{id}",name="editerEvent")
      */
-    public function modifyEvent(Request $request, int $id): Response
+    public function modifyEvent(Request $request, int $id, TranslatorInterface $translator): Response
     {
         $entityManager = $this->getDoctrine()->getManager();
 
@@ -86,7 +94,8 @@ class EventController extends AbstractController
         if($form->isSubmitted() && $form->isValid())
         {
             $entityManager->flush();
-            $this->addFlash('message', 'Event modifié avec succès');
+            $message = $translator->trans('Event modifié avec succès');
+            $this->addFlash('message', $message);
             return $this->redirectToRoute('event');
         }
 

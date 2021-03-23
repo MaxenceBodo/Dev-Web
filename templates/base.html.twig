@@ -20,8 +20,8 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="/">{{ 'Activigo' |trans }}</a>
-                <a class="navbar-brand" href="/{_locale}/creerEvent">{{ 'DEPOSER UNE OFFRE' |trans }}</a>
-                <a class="navbar-brand" href="/{_locale}/event">{{ 'Activite' |trans }}</a>
+                <a class="navbar-brand" href="/creerEvent">{{ 'DEPOSER UNE OFFRE' |trans }}</a>
+                <a class="navbar-brand" href="/event">{{ 'Activite' |trans }}</a>
                 {% if is_granted('ROLE_USER') %}
                     <a href="{{ path('gererSesActivites', {'id': app.user.id}) }}" class="navbar-brand">{{ 'Gerer ses activites' |trans }}</a>
                 {% endif %}
@@ -32,21 +32,20 @@
                     <li>
                         <div>
                             {% if is_granted('ROLE_ADMIN') %}
-                                <a href="/{_locale}/admin" class="btn btn-default navbar-btn">{{ 'Mode administration' |trans }}</a>
+                                <a href="/admin" class="btn btn-default navbar-btn">{{ 'Mode administration' |trans }}</a>
                             {% endif %}
                             {% if is_granted('ROLE_USER') %}
                                 <a href="{{ path('gererCompte', {'id': app.user.id}) }}" class="btn btn-default navbar-btn">{{ 'Profil' |trans }}</a>
                                 <a href="/logout" class="btn btn-default navbar-btn">{{ 'Se déconnecter' |trans }}</a>
                             {% else %}
-                                <a href="/{_locale}/register" class="btn btn-default navbar-btn">{{ 'S\'inscrire' |trans }}</a>
-                                <a href="/{_locale}/login" class="btn btn-default navbar-btn">{{ 'S\'identifier' |trans }}</a>
+                                <a href="/register" class="btn btn-default navbar-btn">{{ 'S\'inscrire' |trans }}</a>
+                                <a href="/login" class="btn btn-default navbar-btn">{{ 'S\'identifier' |trans }}</a>
                             {% endif %}
-                            {% for key,locale in locales %}
-                                <li><a href="{{ path(app.request.get('_route'),
-                                app.request.attributes.get('_route_params')|merge({'_locale': key})) }}">{{locale}}</a></li>
+                            {% for locale in locales %}
+                                {% if locale != app.request.locale %}
+                                        <a class="nav-link" href="{{ path('change_locale', {'locale': locale}) }}"><img src="{{asset('Image/'~locale~'.png')}}" alt="{{locale}}"></a>
+                                {% endif %}
                             {% endfor %}
-
-                            
                         </div>
                     </li>
                 </ul>

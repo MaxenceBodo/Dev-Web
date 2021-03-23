@@ -10,10 +10,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Event;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
-/**
- * @Route("/{_locale}/")
- */
+
 class UserController extends AbstractController
 {
     /**
@@ -29,7 +28,7 @@ class UserController extends AbstractController
     /**
      * @Route("/gererCompte/{id}", name="gererCompte")
      */
-    public function gererCompte(int $id,User $user, Request $request)
+    public function gererCompte(int $id,User $user, Request $request, TranslatorInterface $translator)
     {
         $form = $this->createForm(EditUserType::class, $user);
         $form->handleRequest($request);
@@ -39,7 +38,8 @@ class UserController extends AbstractController
             $entityManager->persist($user);
             $entityManager->flush();
 
-            $this->addFlash('message', 'Utilisateur modifié avec succès');
+            $message = $translator->trans('Utilisateur modifié avec succès');
+            $this->addFlash('message', $message);
             return $this->redirectToRoute('home');
         }
         

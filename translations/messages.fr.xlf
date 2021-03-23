@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="7Gur9wy" resname="Activigo">
+        <source>Activigo</source>
+        <target>Activigo</target>
+      </trans-unit>
+      <trans-unit id="tfwf_iw" resname="DEPOSER UNE OFFRE">
+        <source>DEPOSER UNE OFFRE</source>
+        <target>DEPOSER UNE OFFRE</target>
+      </trans-unit>
+      <trans-unit id="x194s7a" resname="Activite">
+        <source>Activite</source>
+        <target>Activite</target>
+      </trans-unit>
+      <trans-unit id="Z3MP7A4" resname="S'identifier">
+        <source>S'identifier</source>
+        <target>S'identifier</target>
+      </trans-unit>
+      <trans-unit id="PCX0_17" resname="S'inscrire">
+        <source>S'inscrire</source>
+        <target>S'inscrire</target>
+      </trans-unit>
+      <trans-unit id="9Q0PWsi" resname="Rajout activite">
+        <source>Rajout activite</source>
+        <target>Rajout activite</target>
+      </trans-unit>
+      <trans-unit id="eQdSCfK" resname="Envoyer">
+        <source>Envoyer</source>
+        <target>Envoyer</target>
+      </trans-unit>
+      <trans-unit id="YPsBs90" resname="Liste articles">
+        <source>Liste articles</source>
+        <target>Liste articles</target>
+      </trans-unit>
+      <trans-unit id="RnizOnZ" resname="Quel sera votre prochain terrain de jeu ?">
+        <source>Quel sera votre prochain terrain de jeu ?</source>
+        <target>Quel sera votre prochain terrain de jeu ?</target>
+      </trans-unit>
+      <trans-unit id="uuw3H2U" resname="Réservez parmi une mutlitude d'activités partout en france">
+        <source>Réservez parmi une mutlitude d'activités partout en france</source>
+        <target>Réservez parmi une mutlitude d'activités partout en france</target>
+      </trans-unit>
+      <trans-unit id="Tfsd49m" resname="Nos activités">
+        <source>Nos activités</source>
+        <target>Nos activités</target>
+      </trans-unit>
+      <trans-unit id="PN9sQgJ" resname="Laissez vous tenter par nos proposition">
+        <source>Laissez vous tenter par nos proposition</source>
+        <target>Laissez vous tenter par nos proposition</target>
+      </trans-unit>
+      <trans-unit id="EZLfxHr" resname="//Mettre exemple d'activité\">
+        <source>//Mettre exemple d'activité\</source>
+        <target>//Mettre exemple d'activité\</target>
+      </trans-unit>
+      <trans-unit id="2t_O8Jx" resname="Vous etes connecté comme">
+        <source>Vous etes connecté comme</source>
+        <target>Vous etes connecté comme</target>
+      </trans-unit>
+      <trans-unit id="sYru0ag" resname="Se déconnecter">
+        <source>Se déconnecter</source>
+        <target>Se déconnecter</target>
+      </trans-unit>
+      <trans-unit id="iCVfvgc" resname="Identifiez vous">
+        <source>Identifiez vous</source>
+        <target>Identifiez vous</target>
+      </trans-unit>
+      <trans-unit id="B_1sz2v" resname="Mail">
+        <source>Mail</source>
+        <target>Mail</target>
+      </trans-unit>
+      <trans-unit id=".5yLjAZ" resname="Mot de passe">
+        <source>Mot de passe</source>
+        <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit id="xUkbiWT" resname="Se rappeler de moi">
+        <source>Se rappeler de moi</source>
+        <target>Se rappeler de moi</target>
+      </trans-unit>
+      <trans-unit id="CcfZVBs" resname="Modifier un utilisateur">
+        <source>Modifier un utilisateur</source>
+        <target>Modifier un utilisateur</target>
+      </trans-unit>
+      <trans-unit id="OEOXHc." resname="ID">
+        <source>ID</source>
+        <target>ID</target>
+      </trans-unit>
+      <trans-unit id="lpzL089" resname="Email">
+        <source>Email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="f9UDoym" resname="Rôles">
+        <source>Rôles</source>
+        <target>Rôles</target>
+      </trans-unit>
+      <trans-unit id="L1iK.hS" resname="nom">
+        <source>nom</source>
+        <target>nom</target>
+      </trans-unit>
+      <trans-unit id="KcFzACF" resname="prenom">
+        <source>prenom</source>
+        <target>prenom</target>
+      </trans-unit>
+      <trans-unit id="dny_71s" resname="date de Naissance">
+        <source>date de Naissance</source>
+        <target>date de Naissance</target>
+      </trans-unit>
+      <trans-unit id="czlyUVm" resname="telephone">
+        <source>telephone</source>
+        <target>telephone</target>
+      </trans-unit>
+      <trans-unit id="ch5bKau" resname="Utilisateur">
+        <source>Utilisateur</source>
+        <target>Utilisateur</target>
+      </trans-unit>
+      <trans-unit id="53Az_YO" resname="Administrateur">
+        <source>Administrateur</source>
+        <target>Administrateur</target>
+      </trans-unit>
+      <trans-unit id="0_qA2Oh" resname="Gerer ses activites">
+        <source>Gerer ses activites</source>
+        <target>Gerer ses activites</target>
+      </trans-unit>
+      <trans-unit id="z_gc__B" resname="Mode administration">
+        <source>Mode administration</source>
+        <target>Mode administration</target>
+      </trans-unit>
+      <trans-unit id="4mfTQ4I" resname="Profil">
+        <source>Profil</source>
+        <target>Profil</target>
+      </trans-unit>
+      <trans-unit id="c_Gaiv2" resname="Mes informations">
+        <source>Mes informations</source>
+        <target>Mes informations</target>
+      </trans-unit>
+      <trans-unit id="ssEkU20" resname="Nom">
+        <source>Nom</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="Um4Ah8w" resname="Description">
+        <source>Description</source>
+        <target>Description</target>
+      </trans-unit>
+      <trans-unit id="G1_KtRk" resname="Type Activite">
+        <source>Type Activite</source>
+        <target>Type Activite</target>
+      </trans-unit>
+      <trans-unit id="9516ize" resname="Commentaires">
+        <source>Commentaires</source>
+        <target>Commentaires</target>
+      </trans-unit>
+      <trans-unit id="LY8OR99" resname="Commentaire écrit par">
+        <source>Commentaire écrit par</source>
+        <target>Commentaire écrit par</target>
+      </trans-unit>
+      <trans-unit id="3_BHb6T" resname="FAIRE LES CRUD GIGA BG T ES TROP BEAU OUBLIE PAS">
+        <source>FAIRE LES CRUD GIGA BG T ES TROP BEAU OUBLIE PAS</source>
+        <target>FAIRE LES CRUD GIGA BG T ES TROP BEAU OUBLIE PAS</target>
+      </trans-unit>
+      <trans-unit id="QvA4ehq" resname="Mes Activites">
+        <source>Mes Activites</source>
+        <target>Mes Activites</target>
+      </trans-unit>
+      <trans-unit id="IumSuye" resname="Editer">
+        <source>Editer</source>
+        <target>Editer</target>
+      </trans-unit>
+      <trans-unit id="5HUNqZ8" resname="Effacer">
+        <source>Effacer</source>
+        <target>Effacer</target>
+      </trans-unit>
+      <trans-unit id="NGdqgWZ" resname="Liste des utilisateurs">
+        <source>Liste des utilisateurs</source>
+        <target>Liste des utilisateurs</target>
+      </trans-unit>
+      <trans-unit id="aaIhYeI" resname="Utilisateur modifié avec succès">
+        <source>Utilisateur modifié avec succès</source>
+        <target>Utilisateur modifié avec succès</target>
+      </trans-unit>
+      <trans-unit id="YAbzYoG" resname="Event modifié avec succès">
+        <source>Event modifié avec succès</source>
+        <target>Event modifié avec succès</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
