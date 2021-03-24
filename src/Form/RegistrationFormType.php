@@ -23,7 +23,11 @@ class RegistrationFormType extends AbstractType
             ->add('email')
             ->add('nom',TextType::class)
             ->add('prenom',TextType::class)
-            ->add('dateNaissance',DateType::class)
+            ->add('dateNaissance',DateType::class, [
+                'required' => true,
+                'years'=>range(1900,2021),
+                'data'=> new \DateTime()
+            ])
             ->add('telephone',IntegerType::class) 
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,

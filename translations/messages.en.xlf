@@ -53,10 +53,6 @@
         <source>Laissez vous tenter par nos proposition</source>
         <target>Let yourself be tempted by our proposals</target>
       </trans-unit>
-      <trans-unit id="EZLfxHr" resname="//Mettre exemple d'activité\">
-        <source>//Mettre exemple d'activité\</source>
-        <target>//Mettre exemple d'activité\</target>
-      </trans-unit>
       <trans-unit id="2t_O8Jx" resname="Vous etes connecté comme">
         <source>Vous etes connecté comme</source>
         <target>You are logged as</target>
@@ -164,10 +160,6 @@
       <trans-unit id="LY8OR99" resname="Commentaire écrit par">
         <source>Commentaire écrit par</source>
         <target>Commentary written by</target>
-      </trans-unit>
-      <trans-unit id="3_BHb6T" resname="FAIRE LES CRUD GIGA BG T ES TROP BEAU OUBLIE PAS">
-        <source>FAIRE LES CRUD GIGA BG T ES TROP BEAU OUBLIE PAS</source>
-        <target>FAIRE LES CRUD GIGA BG T ES TROP BEAU OUBLIE PAS</target>
       </trans-unit>
       <trans-unit id="QvA4ehq" resname="Mes Activites">
         <source>Mes Activites</source>

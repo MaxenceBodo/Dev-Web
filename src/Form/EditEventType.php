@@ -30,6 +30,7 @@ class EditEventType extends AbstractType
             ->add('lieux',TextType::class, ['required' => true])
             ->add('date',DateType::class, [
                 'required' => true,
+                'years'=>range(2021,2025),
                 'data'=> new \DateTime()
             ])
             ->add('description',TextType::class, ['required' => true])
