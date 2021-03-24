@@ -6,15 +6,15 @@
 
     
     <div class="container">
-    <h1>{{'Rajout activite' |trans}}</h1>
-    {{ form_start(registrationForm)}}
-        <label>{% trans %}Nom{% endtrans %} : </label>{{ form_widget(registrationForm.nom) }}
-        <label>{% trans %}Type{% endtrans %} : </label>{{ form_widget(registrationForm.type) }}
-        <label>{% trans %}Lieux{% endtrans %} : </label>{{ form_widget(registrationForm.lieux) }}
-        <label>{% trans %}Date{% endtrans %} : </label>{{ form_widget(registrationForm.date) }}
-        <label>{% trans %}Description{% endtrans %} : </label>{{ form_widget(registrationForm.description) }}
+        <h1>{{'Rajout activite' |trans}}</h1>
+        {{ form_start(registrationForm)}}
+            <label>{% trans %}Nom{% endtrans %} : </label>{{ form_widget(registrationForm.nom) }}
+            <label>{% trans %}Type{% endtrans %} : </label>{{ form_widget(registrationForm.type) }}
+            <label>{% trans %}Lieux{% endtrans %} : </label>{{ form_widget(registrationForm.lieux) }}
+            <label>{% trans %}Date{% endtrans %} : </label>{{ form_widget(registrationForm.date) }}
+            <label>{% trans %}Description{% endtrans %} : </label>{{ form_widget(registrationForm.description) }}
 
-    {{ form_end(registrationForm) }}
+        {{ form_end(registrationForm) }}
     </div>
 
 {% endblock %}
