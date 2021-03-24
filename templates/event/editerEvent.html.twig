@@ -3,8 +3,9 @@
 {% block title %}Profil{% endblock %}
 
 {% block body %}
-    <h1>{{'Profil'|trans}}</h1>
-    <h2>{{'Mes informations'|trans}}</h2>
-    {{ form(form_product) }}
-
+    <div class="container">
+        <h1>{{'Profil'|trans}}</h1>
+        <h2>{{'Mes informations'|trans}}</h2>
+        {{ form(form_product) }}
+    </div>
 {% endblock %}

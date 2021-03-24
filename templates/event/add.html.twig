@@ -4,6 +4,8 @@
 
 {% block body %}
 
+    
+    <div class="container">
     <h1>{{'Rajout activite' |trans}}</h1>
     {{ form_start(registrationForm)}}
         <label>{% trans %}Nom{% endtrans %} : </label>{{ form_widget(registrationForm.nom) }}
@@ -13,5 +15,6 @@
         <label>{% trans %}Description{% endtrans %} : </label>{{ form_widget(registrationForm.description) }}
 
     {{ form_end(registrationForm) }}
+    </div>
 
 {% endblock %}

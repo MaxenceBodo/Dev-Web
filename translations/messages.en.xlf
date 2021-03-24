@@ -143,7 +143,7 @@
       </trans-unit>
       <trans-unit id="ssEkU20" resname="Nom">
         <source>Nom</source>
-        <target>Activity Name</target>
+        <target>Last Name</target>
       </trans-unit>
       <trans-unit id="Um4Ah8w" resname="Description">
         <source>Description</source>

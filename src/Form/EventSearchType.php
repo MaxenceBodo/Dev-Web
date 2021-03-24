@@ -23,29 +23,6 @@ class EventSearchType extends AbstractType
                     'placeholder'=>'Lieux'
                 ]
             ])
-            ->add('date', DateType::class,[
-                'required'=>false,
-                'label'=>false,
-                'attr'=>[
-                    'placeholder'=>'Date'
-                ]
-            ])
-            ->add('type',ChoiceType::class,[
-                'required'=>false,
-                'choices'=>[
-                    'Autre'=>'autre',
-                    'Cinema'=>'cinema',
-                    'Theatre'=>'theatre',
-                    'Restaurant'=>'restaurant',
-                    'Sport'=>'Sport',
-                    'Sortie en montagne'=>'sortie en montagne',
-                    'Activite aquatique'=>'Activite aquatique',
-                ],
-                'label'=>false,
-                'attr'=>[
-                    'placeholder'=>'Type'
-                ]
-            ])
         ;
     }
 

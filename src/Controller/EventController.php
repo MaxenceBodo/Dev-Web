@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Entity\Commentaire;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -11,12 +11,11 @@ use App\Entity\Event;
 use App\Entity\EventSearch;
 use App\Form\EventSearchType;
 use App\Form\EventType;
-use Doctrine\DBAL\Query\QueryBuilder;
-use Doctrine\Migrations\Query\Query;
+use App\Repository\EventRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
-use Symfony\Component\Validator\Constraint;
 use Symfony\Contracts\Translation\TranslatorInterface;
+
 
 
 class EventController extends AbstractController
@@ -25,33 +24,31 @@ class EventController extends AbstractController
     /**
      * @Route("/event", name="event")
      */
-    public function index(Request $request, PaginatorInterface $paginator) : Response // Nous ajoutons les paramètres requis
+    public function index(Request $request, PaginatorInterface $paginator, EventRepository $repositoty) : Response // Nous ajoutons les paramètres requis
     {
         $search = new EventSearch();
         $form = $this->createForm(EventSearchType::class, $search);
         $form->handleRequest($request);
-        // Méthode findBy qui permet de récupérer les données avec des critères de filtre et de tri
-        $donneesEvent = $this->getDoctrine()->getRepository(Event::class)->findBy([],['date' => 'asc']);
-        $donneesComent= $this->getDoctrine()->getRepository(Commentaire::class)->findBy([
-            'email'=>$donneesEvent,
-            'actif'=>1
-        ],['created_at'=>'desc']);
 
+        $eventSeach = $repositoty->findAllBySearch($search);
+
+        // Méthode findBy qui permet de récupérer les données avec des critères de filtre et de tri
+        //$donneesEvent = $this->getDoctrine()->getRepository(Event::class)->findBy([],['date' => 'asc']);
+        
         $event = $paginator->paginate(
-            $donneesEvent, // Requête contenant les données à paginer (ici nos articles)
+            $eventSeach, // Requête contenant les données à paginer (ici nos articles)
             $request->query->getInt('page', 1), // Numéro de la page en cours, passé dans l'URL, 1 si aucune page
             6 // Nombre de résultats par page
         );
         
+        
         return $this->render('event/index.html.twig', [
             'events' => $event,
-            'comments' => $donneesComent,
+            'eventsTest'=>$eventSeach,
             'form'=>$form->createView(),
 
         ]);
     }
-
-    
 
     //---------CREATE
     /**
