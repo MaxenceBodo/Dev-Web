@@ -19,7 +19,7 @@
                         <tr>
                             <td>{{comment.email}}</td>
                             <td>{{comment.contenu}}</td>
-                            {#<td>{{comment.created_at}}</td>#}
+                            <td>{{comment.created_at|date("m/d/Y")}}</td>
                         </tr>
                     {% endfor %}
                 </tbody>
