@@ -30,10 +30,8 @@ class EventController extends AbstractController
         $form = $this->createForm(EventSearchType::class, $search);
         $form->handleRequest($request);
 
+        //Tableau de requête trié
         $eventSeach = $repositoty->findAllBySearch($search);
-
-        // Méthode findBy qui permet de récupérer les données avec des critères de filtre et de tri
-        //$donneesEvent = $this->getDoctrine()->getRepository(Event::class)->findBy([],['date' => 'asc']);
         
         $event = $paginator->paginate(
             $eventSeach, // Requête contenant les données à paginer (ici nos articles)
@@ -44,7 +42,6 @@ class EventController extends AbstractController
         
         return $this->render('event/index.html.twig', [
             'events' => $event,
-            'eventsTest'=>$eventSeach,
             'form'=>$form->createView(),
 
         ]);

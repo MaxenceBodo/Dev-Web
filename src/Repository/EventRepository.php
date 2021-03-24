@@ -36,7 +36,15 @@ class EventRepository extends ServiceEntityRepository
             ->orderBy('e.date','ASC')
             ->getQuery()
             ->getResult();
-        } else {
+        } elseif($recherche->getType()) 
+        {
+            return $this->createQueryBuilder('e')
+            ->andWhere('e.type=:val')
+            ->setParameter('val',$recherche->getType())
+            ->orderBy('e.date','ASC')
+            ->getQuery()
+            ->getResult();
+        }else{
             return $query;
         }
     }

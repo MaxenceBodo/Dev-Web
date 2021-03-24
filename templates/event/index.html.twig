@@ -11,6 +11,9 @@
                         {{form_row(form.lieux)}}
                     </div>
                     <div class="col">
+                        {{form_row(form.type)}}
+                    </div>
+                    <div class="col">
                         <button class="btn btn-primary">{{'Rechercher'|trans}}</button>
                     </div>
                     
@@ -35,7 +38,7 @@
             </tr>
             </thead>
             <tbody>
-                {% for event in eventsTest %}
+                {% for event in events %}
                     <tr>
                         <td>{{event.nom}}</td>
                         <td>{{event.lieux}}</td>
