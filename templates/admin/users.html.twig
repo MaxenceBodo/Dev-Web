@@ -3,44 +3,46 @@
 {% block title %}Liste des utilisateurs{% endblock %}
 
 {% block body %}
-    <h1>{{'Liste des utilisateurs' |trans}}</h1>
-    <table class="table">
-        <thead>
-            <th scope="col">{{'ID'|trans}}</th>
-            <th scope="col">{{'Email'|trans}}</th>
-            <th scope="col">{{'Rôles'|trans}}</th>
-            <th scope="col">{{'nom'|trans}}</th>
-            <th scope="col">{{'prenom'|trans}}</th>
-            <th scope="col">{{'date de Naissance'|trans}}</th>
-            <th scope="col">{{'telephone'|trans}}</th>
-        </thead>
-        <tbody>
-            {# On boucle sur les utilisateurs #}
-            {% for user in users %}
-                <tr>
-                    <td>{{ user.id }}&nbsp&nbsp  </td>
-                    <td>{{ user.email }}&nbsp  </td>
-                    <td>
-                        {# On boucle sur les rôles #}
-                        {% for role in user.roles %}
-                            {% if role == "ROLE_USER" %}
-                                {{'Utilisateur'|trans}}
-                            {% elseif role == "ROLE_ADMIN" %}
-                                {{'Administrateur'|trans}}
-                            {% endif %}
-                        {% endfor %}&nbsp
-                    </td>
-                    <td>{{ user.nom }}&nbsp  </td>
-                    <td>{{ user.prenom }}&nbsp  </td>
-                    <td>{{ user.dateNaissance|date("d/m/Y") }}&nbsp  </td>
-                    <td>{{ user.telephone }}&nbsp  </td>
-                    <td><a href="{{ path('admin_modifier_utilisateur', {'id': user.id}) }}">{{ 'Modifier' |trans }}</a></td>
-                    <td><a href="{{ path('admin_delete_utilisateur', {'id': user.id}) }}">{{ 'Supprimer' |trans }}</a></td>
-                </tr>
-                
-            {% else %}
-                <p>Aucun utilisateur inscrit</p>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="container">
+        <h1>{{'Liste des utilisateurs' |trans}}</h1>
+        <table class="table">
+            <thead>
+                <th scope="col">{{'ID'|trans}}</th>
+                <th scope="col">{{'Email'|trans}}</th>
+                <th scope="col">{{'Rôles'|trans}}</th>
+                <th scope="col">{{'nom'|trans}}</th>
+                <th scope="col">{{'prenom'|trans}}</th>
+                <th scope="col">{{'date de Naissance'|trans}}</th>
+                <th scope="col">{{'telephone'|trans}}</th>
+            </thead>
+            <tbody>
+                {# On boucle sur les utilisateurs #}
+                {% for user in users %}
+                    <tr>
+                        <td>{{ user.id }}&nbsp&nbsp  </td>
+                        <td>{{ user.email }}&nbsp  </td>
+                        <td>
+                            {# On boucle sur les rôles #}
+                            {% for role in user.roles %}
+                                {% if role == "ROLE_USER" %}
+                                    {{'Utilisateur'|trans}}
+                                {% elseif role == "ROLE_ADMIN" %}
+                                    {{'Administrateur'|trans}}
+                                {% endif %}
+                            {% endfor %}&nbsp
+                        </td>
+                        <td>{{ user.nom }}&nbsp  </td>
+                        <td>{{ user.prenom }}&nbsp  </td>
+                        <td>{{ user.dateNaissance|date("d/m/Y") }}&nbsp  </td>
+                        <td>{{ user.telephone }}&nbsp  </td>
+                        <td><a href="{{ path('admin_modifier_utilisateur', {'id': user.id}) }}">{{ 'Modifier' |trans }}</a></td>
+                        <td><a href="{{ path('admin_delete_utilisateur', {'id': user.id}) }}">{{ 'Supprimer' |trans }}</a></td>
+                    </tr>
+                    
+                {% else %}
+                    <p>Aucun utilisateur inscrit</p>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

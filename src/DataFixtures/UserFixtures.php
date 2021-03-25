@@ -6,9 +6,16 @@ use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class UserFixtures extends Fixture
 {
+    private $encoder;
+
+    public function __construct(UserPasswordEncoderInterface $encoder)
+    {
+        $this->encoder=$encoder;
+    }
     /**
      * @param ObjectManager $manager
      * 
@@ -17,22 +24,25 @@ class UserFixtures extends Fixture
     public function load(ObjectManager $manager) : void 
     {
         $user1=new User();
-        $date2 = "22-04-2022";
+        $date1 = "10-09-1999";
         $roles1[]='ROLE_ADMIN';
-        $user1->setEmail('email1@hotmail.fr')
+        $password1 = $this->encoder->encodePassword($user1,'@admin1');
+        $user1->setEmail('admin@hotmail.fr')
         ->setRoles($roles1)
-        ->setPassword('@Role1')
+        ->setPassword($password1)
         ->setNom('Nom1')
         ->setPrenom('Prenom1')
-        ->setDateNaissance(\DateTime::createFromFormat('d-m-Y',$date2))
+        ->setDateNaissance(\DateTime::createFromFormat('d-m-Y',$date1))
         ->setTelephone('0612764845');
         $manager->persist($user1);
 
         $user2=new User();
+        $date2 = "26-07-1973";
         $roles2[]='ROLE_USER';
-        $user2->setEmail('email2@hotmail.fr')
+        $password2 = $this->encoder->encodePassword($user2,'@user1');
+        $user2->setEmail('user1@hotmail.fr')
         ->setRoles($roles2)
-        ->setPassword('@Role2')
+        ->setPassword($password2)
         ->setNom('Nom2')
         ->setPrenom('Prenom2')
         ->setDateNaissance(\DateTime::createFromFormat('d-m-Y',$date2))
@@ -40,12 +50,14 @@ class UserFixtures extends Fixture
         $manager->persist($user2);
 
         $user3=new User();
-        $user3->setEmail('email3@hotmail.fr')
+        $date3 = "24-06-1971";
+        $password3 = $this->encoder->encodePassword($user3,'@user2');
+        $user3->setEmail('user2@hotmail.fr')
         ->setRoles($roles2)
-        ->setPassword('@Role3')
+        ->setPassword($password3)
         ->setNom('Nom3')
         ->setPrenom('Prenom3')
-        ->setDateNaissance(\DateTime::createFromFormat('d-m-Y',$date2))
+        ->setDateNaissance(\DateTime::createFromFormat('d-m-Y',$date3))
         ->setTelephone('0745162698');
         $manager->persist($user3);
 

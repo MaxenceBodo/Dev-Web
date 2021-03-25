@@ -7,18 +7,19 @@
     {% for flashError in app.flashes('verify_email_error') %}
         <div class="alert alert-danger" role="alert">{{ flashError }}</div>
     {% endfor %}
-
+    <div class="container">
     <h1>{{'Inscrire'|trans}}</h1>
-    {{ form_start(registrationForm) }}
-        <label>{% trans %}Email{% endtrans %} : </label>{{ form_widget(registrationForm.email) }}
-        <label>{% trans %}Mot de passe{% endtrans %} : </label>{{ form_widget(registrationForm.plainPassword, {label: 'Password' }) }}
-        <label>{% trans %}Nom{% endtrans %} : </label>{{ form_widget(registrationForm.nom) }}
-        <label>{% trans %}Prenom{% endtrans %} : </label>{{ form_widget(registrationForm.prenom) }}
-        <label>{% trans %}Date naissance{% endtrans %} : </label>{{ form_widget(registrationForm.dateNaissance) }}
-        <label>{% trans %}Telephone{% endtrans %} : </label>{{ form_widget(registrationForm.telephone) }}
-        {{ form_widget(registrationForm.agreeTerms) }}
+        {{ form_start(registrationForm) }}
+            <label>{% trans %}Email{% endtrans %} : </label>{{ form_widget(registrationForm.email) }}
+            <label>{% trans %}Mot de passe{% endtrans %} : </label>{{ form_widget(registrationForm.plainPassword, {label: 'Password' }) }}
+            <label>{% trans %}Nom{% endtrans %} : </label>{{ form_widget(registrationForm.nom) }}
+            <label>{% trans %}Prenom{% endtrans %} : </label>{{ form_widget(registrationForm.prenom) }}
+            <label>{% trans %}Date naissance{% endtrans %} : </label>{{ form_widget(registrationForm.dateNaissance) }}
+            <label>{% trans %}Telephone{% endtrans %} : </label>{{ form_widget(registrationForm.telephone) }}
+            {{ form_widget(registrationForm.agreeTerms) }}
 
-        <button type="submit" class="btn">{{'Register'|trans}}</button>
-    {{ form_end(registrationForm) }}
+            <button type="submit" class="btn">{{'Register'|trans}}</button>
+        {{ form_end(registrationForm) }}
+    </div>
 {% endblock %}
 

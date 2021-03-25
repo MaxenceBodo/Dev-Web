@@ -3,24 +3,26 @@
 {% block title %}Commentaire{% endblock %}
 
 {% block body %}
-    <div class="container mt-4">
-        <h1> {{'Liste articles' |trans}}</h1>
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">{{'email'|trans}}</th>
-                <th scope="col">{{'contenu'|trans}}</th>
-                <th scope="col">{{'created_at'|trans}}</th>
-            </tr>
-            </thead>
-            <tbody>
-                {% for comment in comments %}
-                    <tr>
-                        <td>{{comment.email}}</td>
-                        <td>{{comment.contenu}}</td>
-                        {#<td>{{comment.created_at}}</td>#}
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+    <div class="container">
+        <div class="container mt-4">
+            <h1> {{'Liste articles' |trans}}</h1>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">{{'email'|trans}}</th>
+                    <th scope="col">{{'contenu'|trans}}</th>
+                    <th scope="col">{{'created_at'|trans}}</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {% for comment in comments %}
+                        <tr>
+                            <td>{{comment.email}}</td>
+                            <td>{{comment.contenu}}</td>
+                            <td>{{comment.created_at|date("m/d/Y")}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </div>
 {% endblock %}
