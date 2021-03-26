@@ -24,7 +24,7 @@ class CommentaireFixtures extends Fixture
         $comment1->setEmail('email1@hotmail.fr')
         ->setContenu('Super event')
         ->setActif('1')
-        ->setCreatedAt(\DateTime::createFromFormat('d-m-Y',$date2))
+        ->setcreated_at(\DateTime::createFromFormat('d-m-Y',$date2))
         ->setEvent(1);
         $manager->persist($comment1);
 
@@ -34,7 +34,7 @@ class CommentaireFixtures extends Fixture
         $comment2->setEmail('email2@hotmail.fr')
         ->setContenu('Super event')
         ->setActif('0')
-        ->setCreatedAt(\DateTime::createFromFormat('d-m-Y',$date2))
+        ->setcreated_at(\DateTime::createFromFormat('d-m-Y',$date2))
         ->setEvent(1);
         $manager->persist($comment2);
 
@@ -44,7 +44,7 @@ class CommentaireFixtures extends Fixture
         $comment3->setEmail('email3@hotmail.fr')
         ->setContenu('Super event')
         ->setActif('1')
-        ->setCreatedAt(\DateTime::createFromFormat('d-m-Y',$date2))
+        ->setcreated_at(\DateTime::createFromFormat('d-m-Y',$date2))
         ->setEvent(2);
         $manager->persist($comment3);
 
