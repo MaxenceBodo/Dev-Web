@@ -19,8 +19,8 @@
                 {# On boucle sur les utilisateurs #}
                 {% for user in users %}
                     <tr>
-                        <td>{{ user.id }}&nbsp&nbsp  </td>
-                        <td>{{ user.email }}&nbsp  </td>
+                        <td>{{ user.id }}  </td>
+                        <td>{{ user.email }}  </td>
                         <td>
                             {# On boucle sur les rôles #}
                             {% for role in user.roles %}
@@ -29,14 +29,19 @@
                                 {% elseif role == "ROLE_ADMIN" %}
                                     {{'Administrateur'|trans}}
                                 {% endif %}
-                            {% endfor %}&nbsp
+                            {% endfor %}
                         </td>
-                        <td>{{ user.nom }}&nbsp  </td>
-                        <td>{{ user.prenom }}&nbsp  </td>
-                        <td>{{ user.dateNaissance|date("d/m/Y") }}&nbsp  </td>
-                        <td>{{ user.telephone }}&nbsp  </td>
+                        <td>{{ user.nom }}  </td>
+                        <td>{{ user.prenom }}  </td>
+                        <td>{{ user.dateNaissance|date("d/m/Y") }}  </td>
+                        <td>{{ user.telephone }}  </td>
                         <td><a href="{{ path('admin_modifier_utilisateur', {'id': user.id}) }}">{{ 'Modifier' |trans }}</a></td>
-                        <td><a href="{{ path('admin_delete_utilisateur', {'id': user.id}) }}">{{ 'Supprimer' |trans }}</a></td>
+                        {% if user.roles == ["ROLE_USER"] %} 
+                            <td><a href="{{ path('admin_delete_utilisateur', {'id': user.id}) }}">{{ 'Supprimer' |trans }}</a></td>
+                        {% else %} 
+                            <td></td>
+                        {% endif %}
+                        
                     </tr>
                     
                 {% else %}
@@ -45,4 +50,33 @@
             </tbody>
         </table>
     </div>
+
+    <div class="container">
+        <h1>{{'Liste Commentaire'|trans}}</h1>
+        <table class="table">
+            <thead>
+                <th scope="col">{{'Nom'|trans}}</th>
+                <th scope="col">{{'Type'|trans}}</th>
+                <th scope="col">{{'Lieux'|trans}}</th>
+                <th scope="col">{{'Date'|trans}}</th>
+                <th scope="col">{{'Description'|trans}}</th>
+            </thead>
+            <tbody>
+                {# On boucle sur les utilisateurs #}
+                {% for event in events %}
+                    <tr>
+                        <td>{{ event.nom }}  </td>
+                        <td>{{ event.type }}  </td>
+                        <td>{{ event.lieux }}  </td>
+                        <td>{{ event.date |date("d/m/Y")}}  </td>
+                        <td>{{ event.description}}  </td> 
+                        <td><a href="{{ path('deleteEvent', {'id': event.id}) }}">{{ 'Supprimer' |trans }}</a></td>
+   
+                    </tr>
+                    
+                {% else %}
+                    <p>Aucun commentaire</p>
+                {% endfor %}
+            </tbody>
+        </table>
 {% endblock %}

@@ -55,7 +55,7 @@ class Event extends AbstractController
     private $createur;
 
     /**
-     * @ORM\OneToMany(targetEntity=Commentaire::class, mappedBy="event")
+     * @ORM\OneToMany(targetEntity=Commentaire::class, mappedBy="event", cascade={"remove"})
      */
     private $commentaires;
 

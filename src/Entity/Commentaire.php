@@ -38,7 +38,8 @@ class Commentaire
     private $created_at;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\ManyToOne(targetEntity=Event::class, inversedBy="commentaires")
+     * @ORM\JoinColumn(name="event_id",referencedColumnName="id", nullable=true, onDelete="CASCADE")
      */
     private $event;
 
@@ -95,12 +96,12 @@ class Commentaire
         return $this;
     }
 
-    public function getEvent(): ?int
+    public function getEvent(): ?Event
     {
         return $this->event;
     }
 
-    public function setEvent(?int $event): self
+    public function setEvent(?Event $event): self
     {
         $this->event = $event;
 

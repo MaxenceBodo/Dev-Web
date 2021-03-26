@@ -23,7 +23,8 @@ class EventFixtures extends Fixture
         ->setType('Cinema')
         ->setLieux('Nantes')
         ->setDate(\DateTime::createFromFormat('d-m-Y',$date1))
-        ->setDescription('Sortie cinema pour la sortie de ce chef d oeuvre');
+        ->setDescription('Sortie cinema pour la sortie de ce chef d oeuvre')
+        ->setCreateur($this->getReference('user1'));
         $manager->persist($Event1);
 
         $Event2=new Event();
@@ -32,6 +33,7 @@ class EventFixtures extends Fixture
         ->setType('Cinema')
         ->setLieux('Pornic')
         ->setDate(\DateTime::createFromFormat('d-m-Y',$date2))
+        ->setCreateur($this->getReference('user1'))
         ->setDescription('re edition de ce classique avec Di Caprio');
         $manager->persist($Event2);
 
@@ -41,6 +43,7 @@ class EventFixtures extends Fixture
         ->setType('Sport')
         ->setLieux('Paris')
         ->setDate(\DateTime::createFromFormat('d-m-Y',$date3))
+        ->setCreateur($this->getReference('user3'))
         ->setDescription('Ramenez vos basket et votre energie !');
         $manager->persist($Event3);
 
@@ -50,6 +53,7 @@ class EventFixtures extends Fixture
         ->setType('Sport')
         ->setLieux('Nantes')
         ->setDate(\DateTime::createFromFormat('d-m-Y',$date4))
+        ->setCreateur($this->getReference('user3'))
         ->setDescription('Ramenez vos harnais et votre energie !');
         $manager->persist($Event4);
 
@@ -59,6 +63,7 @@ class EventFixtures extends Fixture
         ->setType('Sortie en montagne')
         ->setLieux('Chamonix')
         ->setDate(\DateTime::createFromFormat('d-m-Y',$date5))
+        ->setCreateur($this->getReference('user2'))
         ->setDescription('Ramenez vos skis et vos platres!');
         $manager->persist($Event5);
 
@@ -68,6 +73,7 @@ class EventFixtures extends Fixture
         ->setType('Sport')
         ->setLieux('Paris')
         ->setDate(\DateTime::createFromFormat('d-m-Y',$date6))
+        ->setCreateur($this->getReference('user1'))
         ->setDescription('Ramenez vos basket et votre energie !');
         $manager->persist($Event6);
 
@@ -77,10 +83,20 @@ class EventFixtures extends Fixture
         ->setType('autre')
         ->setLieux('Pornic')
         ->setDate(\DateTime::createFromFormat('d-m-Y',$date7))
+        ->setCreateur($this->getReference('user2'))
         ->setDescription('Ramenez plein de cadeau !');
         $manager->persist($Event7);
 
         $manager->flush();
+
+        $this->addReference('Event1',$Event1);
+        $this->addReference('Event2',$Event2);
+        $this->addReference('Event3',$Event3);
+        $this->addReference('Event4',$Event4);
+        $this->addReference('Event5',$Event5);
+        $this->addReference('Event6',$Event6);
+        $this->addReference('Event7',$Event7);
+
     }
 
     /**

@@ -36,9 +36,10 @@ class CommentController extends AbstractController
             $comment->setEmail($user->getUsername());
             $comment->setActif(true);
             $comment->setcreated_at(new \DateTime('now'));
-            $comment->setEvent($id);
-
+           
             $entityManager = $this->getDoctrine()->getManager();
+            $event=$entityManager->getRepository(Event::class)->find($id);
+            $comment->setEvent($event);
             $entityManager->persist($comment);
             $entityManager->flush();
             return $this->redirectToRoute('event');
@@ -61,4 +62,5 @@ class CommentController extends AbstractController
             'comments'=>$donnees
         ]);
     }
+
 }

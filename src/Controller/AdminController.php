@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\EditUserType;
+use App\Repository\EventRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -19,10 +20,11 @@ class AdminController extends AbstractController
     /**
      * @Route("/", name="utilisateurs")
      */
-    public function usersList(UserRepository $users)
+    public function usersList(UserRepository $users, EventRepository $event)
     {
         return $this->render('admin/users.html.twig', [
             'users' => $users->findAll(),
+            'events' => $event->findAll()
         ]);
     }
 
