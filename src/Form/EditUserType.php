@@ -15,58 +15,27 @@ use Symfony\Component\Validator\Constraints\NotBlank;
 class EditUserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
-    {   
-        if(true)
-        {
-            $builder
-            ->add('email', EmailType::class,[
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'Merci d\'entrer un e-mail',
-                    ]),
-                ],
-                'required' => true,
-                'attr' => ['class' =>'form-control'],
-            ])
-            ->add('nom')
-            ->add('prenom')
-            ->add('dateNaissance',DateType::class, [
-                'required' => true,
-                'years'=>range(1900,2021),
-                'data'=> new \DateTime()
-            ])
-            ->add('telephone')
-            ->add('valider', SubmitType::class)
-        ;
-        }else{
-            $builder
-            ->add('email', EmailType::class,[
-                'constraints' => [
-                    new NotBlank([
-                        'message' => 'Merci d\'entrer un e-mail',
-                    ]),
-                ],
-                'required' => true,
-                'attr' => ['class' =>'form-control'],
-            ])
-            ->add('roles', ChoiceType::class, [
-                'choices' => [
-                    'Utilisateur' => 'ROLE_USER',
-                    'Administrateur' => 'ROLE_ADMIN'
-                ],
-                'expanded' => true,
-                'multiple' => true,
-                'label' => 'Rôles' 
-            ])
-            ->add('password')
-            ->add('nom')
-            ->add('prenom')
-            ->add('dateNaissance')
-            ->add('telephone')
-            ->add('valider', SubmitType::class)
-        ;
-        }
-        
+    {
+        $builder
+        ->add('email', EmailType::class,[
+            'constraints' => [
+                new NotBlank([
+                    'message' => 'Merci d\'entrer un e-mail',
+                ]),
+            ],
+            'required' => true,
+            'attr' => ['class' =>'form-control'],
+        ])
+        ->add('nom')
+        ->add('prenom')
+        ->add('dateNaissance',DateType::class, [
+            'required' => true,
+            'years'=>range(1900,2021),
+            'data'=> new \DateTime()
+        ])
+        ->add('telephone')
+        ->add('valider', SubmitType::class);
+              
     }
 
     public function configureOptions(OptionsResolver $resolver)

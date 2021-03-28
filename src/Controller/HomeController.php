@@ -11,6 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     /**
+     * Page d'accueil du site
      * @Route("/", name="home")
      */
     public function index(): Response
@@ -21,6 +22,7 @@ class HomeController extends AbstractController
     }
 
     /**
+     * Permet la modification de la langue
     * @Route("/change_locale/{locale}", name="change_locale")
     */
     public function changeLocale($locale, Request $request)

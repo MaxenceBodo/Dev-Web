@@ -4,7 +4,8 @@ namespace App\Entity;
 
 
 /**
- * Fichier créé manuellement afin qu'il ne s'insere pas dans la bdd
+ * Fichier créé manuellement afin qu'il ne s'insere pas dans la base de donnée
+ * permet de chercher dans la base de donnée pour la fonction de tri
  */
 class EventSearch{
     /**

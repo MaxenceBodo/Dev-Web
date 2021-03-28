@@ -8,6 +8,9 @@ use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+/**
+ * Cree les evenements
+ */
 class EventFixtures extends Fixture
 {
     /**

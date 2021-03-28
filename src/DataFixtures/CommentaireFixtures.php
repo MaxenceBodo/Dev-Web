@@ -6,7 +6,9 @@ use App\Entity\Commentaire;
 use App\Form\EventType;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-
+/**
+ * Cree les commentaires
+ */
 class CommentaireFixtures extends Fixture
 {
     /**

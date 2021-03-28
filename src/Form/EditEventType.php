@@ -15,6 +15,7 @@ class EditEventType extends AbstractType
     {
         $builder
             ->add('nom',TextType::class, ['required' => true])
+            //liste les types d'activités possibles
             ->add('type',ChoiceType::class, [
                 'required' => true,
                 'choices'=>[

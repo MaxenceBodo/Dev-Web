@@ -17,33 +17,40 @@ class UserController extends AbstractController
 {
 
     /**
+     * Permet de gérer le compte passé en id
      * @Route("/gererCompte/{id}", name="gererCompte")
      */
     public function gererCompte(int $id,User $user, Request $request, TranslatorInterface $translator)
     {
+        //Cree le formulaire d'édition de client
         $form = $this->createForm(EditUserType::class, $user);
         $form->handleRequest($request);
 
+        //Si le formulaire est validé et correctement rempli
         if ($form->isSubmitted() && $form->isValid()) {
+            //Envoie dans la base de donnée l'utilisateur modifié
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
 
+            //Affiche un message de modification et renvoie vers la page home
             $message = $translator->trans('Utilisateur modifié avec succès');
             $this->addFlash('message', $message);
             return $this->redirectToRoute('home');
         }
-        
+        //Renvoie vers la page d'édition avec le formulaire en paramètre
         return $this->render('user/editerProfil.html.twig', [
             'userForm' => $form->createView(),
         ]);
     }
 
     /**
+     * Permet d'afficher les activités d'un utilisateur passé en ID
      * @Route("/mesActivites/{id}",name="gererSesActivites")
      */
     public function afficherMesEvent(int $id, UserInterface $user)
     {
+        //Cherche grace à doctrine tous les evenements créé par un l'utilsateur passé en paramètre
         $donnes = $this->getDoctrine()->getRepository(Event::class)->findby(['createur'=>$id]);
         return $this->render('user/mesEvent.html.twig',[
             'mesEvent'=>$donnes

@@ -8,6 +8,9 @@ use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
+/**
+ * Cree les utilisateurs le premier étant un administrateur
+ */
 class UserFixtures extends Fixture
 {
     private $encoder;
