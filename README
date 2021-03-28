@@ -12,7 +12,9 @@ Il faudra aussi une version 7.1.3 ou plus haute de PHP ainsi que les extensions 
 -	SimpleXML
 -	Tokenizer
 
- Une fois tout ceci installé il faudra créer la base de données avec la commande
+Aussi nous utilisons la version 4.4 de symfony.
+
+Une fois tout ceci installé il faudra créer la base de données avec la commande
 php bin/console doctrine:database:create --if-not-exists
 Puis :
 php bin/console doctrine:schema :update –force
