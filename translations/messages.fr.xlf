@@ -125,7 +125,7 @@
         <source>Gerer ses activites</source>
         <target>Gerer ses activites</target>
       </trans-unit>
-      <trans-unit id="z_gcB" resname="Mode administration">
+      <trans-unit id="z_gc__B" resname="Mode administration">
         <source>Mode administration</source>
         <target>Mode administration</target>
       </trans-unit>
@@ -156,10 +156,6 @@
       <trans-unit id="LY8OR99" resname="Commentaire écrit par">
         <source>Commentaire écrit par</source>
         <target>Commentaire écrit par</target>
-      </trans-unit>
-      <trans-unit id="3_BHb6T" resname="FAIRE LES CRUD GIGA BG T ES TROP BEAU OUBLIE PAS">
-        <source>FAIRE LES CRUD GIGA BG T ES TROP BEAU OUBLIE PAS</source>
-        <target>FAIRE LES CRUD GIGA BG T ES TROP BEAU OUBLIE PAS</target>
       </trans-unit>
       <trans-unit id="QvA4ehq" resname="Mes Activites">
         <source>Mes Activites</source>
@@ -206,7 +202,7 @@
         <target>Date</target>
       </trans-unit>
       <trans-unit id="3RATGlD" resname="inscrire">
-        <source>Inscrire</source>
+        <source>inscrire</source>
         <target>Inscrire</target>
       </trans-unit>
       <trans-unit id="t8_nMCO" resname="Prenom">
@@ -230,8 +226,52 @@
         <target>email</target>
       </trans-unit>
       <trans-unit id="XohImNo" resname="password">
-        <source>Password</source>
+        <source>password</source>
         <target>Mot de passe</target>
+      </trans-unit>
+      <trans-unit id="jxSxSqB" resname="Liste Commentaire">
+        <source>Liste Commentaire</source>
+        <target>Liste Commentaire</target>
+      </trans-unit>
+      <trans-unit id="WFxMA_9" resname="Rajout Commentaire">
+        <source>Rajout Commentaire</source>
+        <target>Rajout Commentaire</target>
+      </trans-unit>
+      <trans-unit id="em3lZw6" resname="Contenu">
+        <source>Contenu</source>
+        <target>Contenu</target>
+      </trans-unit>
+      <trans-unit id="MBbviOM" resname="contenu">
+        <source>contenu</source>
+        <target>contenu</target>
+      </trans-unit>
+      <trans-unit id="6Hip2aF" resname="created_at">
+        <source>created_at</source>
+        <target>Crée le</target>
+      </trans-unit>
+      <trans-unit id="YmunqJ." resname="Valider">
+        <source>Valider</source>
+        <target>Valider</target>
+      </trans-unit>
+      <trans-unit id="cz0cdCZ" resname="Rechercher">
+        <source>Rechercher</source>
+        <target>Rechercher</target>
+      </trans-unit>
+      <trans-unit id="47DEQpj" resname="">
+        <source></source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="cYy06L9" resname="Ajouter Commentaire">
+        <source>Ajouter Commentaire</source>
+        <target>Ajouter Commentaire</target>
+      </trans-unit>
+      <trans-unit id="wnmTzAU" resname="Afficher Commentaire">
+        <source>Afficher Commentaire</source>
+        <target>Afficher Commentaire</target>
+      </trans-unit>
+      <trans-unit id="U1KQG2Z" resname="Inscrire">
+        <source>Inscrire</source>
+        <target>Inscrire</target>
       </trans-unit>
     </body>
   </file>

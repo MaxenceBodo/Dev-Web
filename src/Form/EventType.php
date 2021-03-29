@@ -42,7 +42,7 @@ class EventType extends AbstractType
                 'data'=> new \DateTime()
             ])
             ->add('description',TextType::class, ['required' => true])
-            ->add('valider', SubmitType::class)
+            
             
             
         ;

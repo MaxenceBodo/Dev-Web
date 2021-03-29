@@ -143,7 +143,7 @@
       </trans-unit>
       <trans-unit id="ssEkU20" resname="Nom">
         <source>Nom</source>
-        <target>Last Name</target>
+        <target>Event Name</target>
       </trans-unit>
       <trans-unit id="Um4Ah8w" resname="Description">
         <source>Description</source>
@@ -206,7 +206,7 @@
         <target>Dated</target>
       </trans-unit>
       <trans-unit id="3RATGlD" resname="inscrire">
-        <source>Inscrire</source>
+        <source>inscrire</source>
         <target>To register</target>
       </trans-unit>
       <trans-unit id="t8_nMCO" resname="Prenom">
@@ -232,6 +232,50 @@
       <trans-unit id="XohImNo" resname="password">
         <source>password</source>
         <target>password</target>
+      </trans-unit>
+      <trans-unit id="jxSxSqB" resname="Liste Commentaire">
+        <source>Liste Commentaire</source>
+        <target>Comments List</target>
+      </trans-unit>
+      <trans-unit id="WFxMA_9" resname="Rajout Commentaire">
+        <source>Rajout Commentaire</source>
+        <target>Add comment</target>
+      </trans-unit>
+      <trans-unit id="em3lZw6" resname="Contenu">
+        <source>Contenu</source>
+        <target>Content</target>
+      </trans-unit>
+      <trans-unit id="MBbviOM" resname="contenu">
+        <source>contenu</source>
+        <target>Content</target>
+      </trans-unit>
+      <trans-unit id="6Hip2aF" resname="created_at">
+        <source>created_at</source>
+        <target>__created_at</target>
+      </trans-unit>
+      <trans-unit id="YmunqJ." resname="Valider">
+        <source>Valider</source>
+        <target>Validate</target>
+      </trans-unit>
+      <trans-unit id="cz0cdCZ" resname="Rechercher">
+        <source>Rechercher</source>
+        <target>Search</target>
+      </trans-unit>
+      <trans-unit id="47DEQpj" resname="">
+        <source></source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="cYy06L9" resname="Ajouter Commentaire">
+        <source>Ajouter Commentaire</source>
+        <target>Add comment</target>
+      </trans-unit>
+      <trans-unit id="wnmTzAU" resname="Afficher Commentaire">
+        <source>Afficher Commentaire</source>
+        <target>Show comment</target>
+      </trans-unit>
+      <trans-unit id="U1KQG2Z" resname="Inscrire">
+        <source>Inscrire</source>
+        <target>Register</target>
       </trans-unit>
     </body>
   </file>
