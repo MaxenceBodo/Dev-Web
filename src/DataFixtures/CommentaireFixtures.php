@@ -3,12 +3,12 @@
 namespace App\DataFixtures;
 
 use App\Entity\Commentaire;
-use App\Entity\Event;
 use App\Form\EventType;
 use Doctrine\Bundle\FixturesBundle\Fixture;
-use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
-
+/**
+ * Cree les commentaires
+ */
 class CommentaireFixtures extends Fixture
 {
     /**
@@ -24,8 +24,8 @@ class CommentaireFixtures extends Fixture
         $comment1->setEmail('email1@hotmail.fr')
         ->setContenu('Super event')
         ->setActif('1')
-        ->setCreatedAt(\DateTime::createFromFormat('d-m-Y',$date2))
-        ->setEvent(1);
+        ->setcreated_at(\DateTime::createFromFormat('d-m-Y',$date2))
+        ->setEvent($this->getReference('Event1'));
         $manager->persist($comment1);
 
         $comment2=new Commentaire();
@@ -34,8 +34,8 @@ class CommentaireFixtures extends Fixture
         $comment2->setEmail('email2@hotmail.fr')
         ->setContenu('Super event')
         ->setActif('0')
-        ->setCreatedAt(\DateTime::createFromFormat('d-m-Y',$date2))
-        ->setEvent(1);
+        ->setcreated_at(\DateTime::createFromFormat('d-m-Y',$date2))
+        ->setEvent($this->getReference('Event1'));
         $manager->persist($comment2);
 
         $comment3=new Commentaire();
@@ -44,8 +44,8 @@ class CommentaireFixtures extends Fixture
         $comment3->setEmail('email3@hotmail.fr')
         ->setContenu('Super event')
         ->setActif('1')
-        ->setCreatedAt(\DateTime::createFromFormat('d-m-Y',$date2))
-        ->setEvent(2);
+        ->setcreated_at(\DateTime::createFromFormat('d-m-Y',$date2))
+        ->setEvent($this->getReference('Event3'));
         $manager->persist($comment3);
 
         $manager->flush();

@@ -25,21 +25,25 @@ class Event extends AbstractController
     private $id;
 
     /**
+     * Nom de l'utilisateur
      * @ORM\Column(type="string", length=255)
      */
     private $nom;
 
     /**
+     * Type de l'évenements
      * @ORM\Column(type="string", length=255)
      */
     private $type;
 
     /**
+     * Le lieux ou se déroule l'évenement
      * @ORM\Column(type="string", length=255)
      */
     private $lieux;
 
     /**
+     * La date de l'évenement
      * @ORM\Column(type="date")
      */
     private $date;
@@ -50,12 +54,13 @@ class Event extends AbstractController
     private $description;
 
     /**
+     * Créateur de l'évenement
      * @ORM\ManyToOne(targetEntity=User::class, inversedBy="events")
      */
     private $createur;
 
     /**
-     * @ORM\OneToMany(targetEntity=Commentaire::class, mappedBy="event")
+     * @ORM\OneToMany(targetEntity=Commentaire::class, mappedBy="event", cascade={"remove"})
      */
     private $commentaires;
 
@@ -63,15 +68,6 @@ class Event extends AbstractController
     {
         $this->commentaires = new ArrayCollection();
     }
-    /*
-    /**
-    * @ORM\PrePersist()
-    *
-    public function prePersist()
-    {
-        $this->createur = $this->getUser();
-    }
-    */
 
     public function getId(): ?int
     {

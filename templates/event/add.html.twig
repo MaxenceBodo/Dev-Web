@@ -13,7 +13,7 @@
             <label>{% trans %}Lieux{% endtrans %} : </label>{{ form_widget(registrationForm.lieux) }}
             <label>{% trans %}Date{% endtrans %} : </label>{{ form_widget(registrationForm.date) }}
             <label>{% trans %}Description{% endtrans %} : </label>{{ form_widget(registrationForm.description) }}
-
+            <button type="submit" class="btn">{{'Valider'|trans}}</button>
         {{ form_end(registrationForm) }}
     </div>
 

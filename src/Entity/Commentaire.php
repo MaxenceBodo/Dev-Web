@@ -18,27 +18,34 @@ class Commentaire
     private $id;
 
     /**
+     * email du créateur du commentaire
      * @ORM\Column(type="string", length=255)
      */
     private $email;
 
     /**
+     * Le commentaire
      * @ORM\Column(type="text")
      */
     private $contenu;
 
     /**
+     * Affiche si le commentaire est actif ou pas
      * @ORM\Column(type="boolean")
      */
     private $actif;
 
     /**
+     * Date de création du commentaire
      * @ORM\Column(type="datetime")
      */
     private $created_at;
 
     /**
-     * @ORM\Column(type="integer")
+     * Renvoie à l'event sur lequel est posté le commentaire
+     * Loesqu'un event est supprimé tous ces commentaires sont aussi supprimés
+     * @ORM\ManyToOne(targetEntity=Event::class, inversedBy="commentaires")
+     * @ORM\JoinColumn(name="event_id",referencedColumnName="id", nullable=true, onDelete="CASCADE")
      */
     private $event;
 
@@ -95,12 +102,12 @@ class Commentaire
         return $this;
     }
 
-    public function getEvent(): ?int
+    public function getEvent(): ?Event
     {
         return $this->event;
     }
 
-    public function setEvent(?int $event): self
+    public function setEvent(?Event $event): self
     {
         $this->event = $event;
 

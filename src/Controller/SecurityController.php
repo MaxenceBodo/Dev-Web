@@ -11,23 +11,27 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 class SecurityController extends AbstractController
 {
     /**
+     * Permet de se connecter
      * @Route("/login", name="app_login")
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
+        //Si il y a déja un utilisateur de connecté renvoie vers homme
+        //empeche la double authentification
         if ($this->getUser()) {
             return $this->redirectToRoute('home');
         }
 
-        // get the login error if there is one
+        // Crée l'erreur de connection si il y en a 
         $error = $authenticationUtils->getLastAuthenticationError();
-        // last username entered by the user
+        // Dernier nom saisie par l'utilisateur
         $lastUsername = $authenticationUtils->getLastUsername();
-
+        //Renvoie vers la page de connection
         return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
     }
 
     /**
+     * Permet de se deconnecter
      * @Route("/logout", name="app_logout")
      */
     public function logout()
