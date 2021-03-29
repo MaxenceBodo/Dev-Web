@@ -25,7 +25,7 @@ Une fois dans le dossier et composer installé, il faudra tapper
 Une fois tout ceci installé il faudra créer la base de données avec la commande
     php bin/console doctrine:database:create --if-not-exists
 Puis :
-    php bin/console doctrine:schema :update –force
+    php bin/console doctrine:schema:update -–force
 Afin de créer les différentes tables puis :
     php bin/console doctrine:fixtures:load
 Afin d’importer un jeu de donnée.
