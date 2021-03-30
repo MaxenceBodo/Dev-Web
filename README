@@ -17,20 +17,15 @@ Il faudra aussi une version 7.1.3 ou plus haute de PHP ainsi que les extensions 
 
 Aussi nous utilisons la version 4.4 de symfony.
 
-Voici le lien du Git si besoin
-https://github.com/Skygal44/ProjetDevWebFinal.git
-
-Une fois dans le dossier et composer installé, il faudra tapper
-    composer install
 Une fois tout ceci installé il faudra créer la base de données avec la commande
-    php bin/console doctrine:database:create --if-not-exists
+php bin/console doctrine:database:create --if-not-exists
 Puis :
-    php bin/console doctrine:schema:update -–force
+php bin/console doctrine:schema:update –-force
 Afin de créer les différentes tables puis :
-    php bin/console doctrine:fixtures:load
+php bin/console doctrine:fixtures:load
 Afin d’importer un jeu de donnée.
 Enfin il faudra lancer le serveur avec la commande 
-    php bin/console server:start
+php bin/console server:start
 
 Le message '[ERROR] This command needs the pcntl extension to run. You can either install it or use the "server:run" command instead.' 
 n’est pas important taper juste yes pour lancer le serveur puis aller à l’adresse indiquée afin de tester l’application.
