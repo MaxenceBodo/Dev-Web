@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Commentaire;
 use App\Entity\User;
 use App\Form\EditUserType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -26,6 +27,9 @@ class UserController extends AbstractController
         $form = $this->createForm(EditUserType::class, $user);
         $form->handleRequest($request);
 
+        $email = $this->getDoctrine()->getRepository(User::class)->find($id)->getEmail();
+        $comments = $this->getDoctrine()->getRepository(Commentaire::class)->findBy(['email'=>$email]);
+
         //Si le formulaire est validé et correctement rempli
         if ($form->isSubmitted() && $form->isValid()) {
             //Envoie dans la base de donnée l'utilisateur modifié
@@ -41,6 +45,7 @@ class UserController extends AbstractController
         //Renvoie vers la page d'édition avec le formulaire en paramètre
         return $this->render('user/editerProfil.html.twig', [
             'userForm' => $form->createView(),
+            'comments' => $comments
         ]);
     }
 
