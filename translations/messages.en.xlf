@@ -251,7 +251,7 @@
       </trans-unit>
       <trans-unit id="6Hip2aF" resname="created_at">
         <source>created_at</source>
-        <target>__created_at</target>
+        <target>created_at</target>
       </trans-unit>
       <trans-unit id="YmunqJ." resname="Valider">
         <source>Valider</source>

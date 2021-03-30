@@ -8,4 +8,23 @@
         <h2>{{'Mes informations' |trans}}</h2>
         {{ form(userForm) }}
     </div>
+    <div class="container">
+        <h2>{{'Mes commentaires' |trans}}</h2>
+        <table  class="table">
+            <thead>
+            <tr>
+                <th scope="col">{{'Contenu'|trans}}</th>
+                <th scope="col">{{'Créé le'|trans}}</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for comment in comments %}
+                    <tr>
+                        <td>{{comment.contenu}}</td>
+                        <td>{{comment.created_at|date}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}
